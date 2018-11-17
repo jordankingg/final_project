@@ -11,7 +11,7 @@
 <body>
 <h1 id="title">Create Account</h1>
 <div id="create_account">
-    <form data-parsley-validate="" id="create_account_form" method="post" action="">
+    <form data-parsley-validate="" id="create_account_form" method="post" action="create_account_page">
 <fieldset>
         <label for="username">Username: </label>
         <input id="username" name="username" type="text"
