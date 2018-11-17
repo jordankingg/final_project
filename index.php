@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-	<title>ISP Project</title>
+	<title>Learn Web Programming</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css" />
@@ -13,12 +13,11 @@
 <div id="page1">
 	<div id = "login_area">
 		<h1>Log In</h1>
-		<input id="username" type="text" placeholder="Enter Username"><br>
-		<button id="login">Enter Password</button>
+		<a id="log_in" href="log_in/log_in_page.php">Log in</a>
 	</div>
 	<div id ="create_area">
 		<h1> Create an Account </h1>
-		<button id="create">Create Account</button>
+		<a id="create_account"  href="create_account/create_account_page.php">Create Account</a>
 	</div>
 </div>
 </body>
