@@ -12,12 +12,7 @@
 <body>
 <h1 id="title">Create Account</h1>
 <div id="create_account">
-<<<<<<< HEAD
-    <form data-parsley-validate="" id="create_account_form" method="post"
-		action="create_account_success.php" onsubmit="timeSubmit()">
-=======
-    <form data-parsley-validate="" id="create_account_form" method="post" action="create_account_page">
->>>>>>> eeee1bd11f771aa2a7f69b79e1747ba0f16ed822
+    <form data-parsley-validate="" id="create_account_form" method="post" action="create_account_success.php">
 <fieldset>
         <label for="username">Username: </label>
         <input id="username" name="username" type="text"
