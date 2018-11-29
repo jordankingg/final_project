@@ -38,63 +38,44 @@ if ($user_count == 0) {
     $user_orders->close();
     //gmail username: exam.csci445@gmail.com
     //gmail password: jeffpaone1
-    /*
-        require_once 'swift/lib/swift_required.php';
-    
-        $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, "ssl")
-              ->setUsername('GMAIL_USERNAME')
-              ->setPassword('GMAIL_PASSWORD');
-    
-        $mailer = Swift_Mailer::newInstance($transport);
-    
-        $message = Swift_Message::newInstance('Test Subject')
-              ->setFrom(array('abc@example.com' => 'ABC'))
-              ->setTo(array('xyz@test.com'))
+
+    require_once '../vendor/swiftmailer/swiftmailer/lib/swift_required.php';
+
+    $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, "ssl"))
+              ->setUsername("exam.csci445@gmail.com")
+              ->setPassword('jeffpaone1');
+
+    $mailer = new Swift_Mailer($transport);
+
+    $message = (new Swift_Message('Test Subject'))
+              ->setFrom(array("exam.csci445@gmail.com" => 'Admission Exam'))
+              ->setTo(array($email))
               ->setBody('This is a test mail.');
-    
-        $result = $mailer->send($message);
-    
-        $mail = new PHPMailer\PHPMailer\PHPMailer();
-    
-        // Send mail using Gmail
-    
-        $mail->IsSMTP(); // telling the class to use SMTP
-            $mail->SMTPAuth = true; // enable SMTP authentication
-            $mail->SMTPSecure = "ssl"; // sets the prefix to the servier
-            $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
-            $mail->Port = 465; // set the SMTP port for the GMAIL server
-            $mail->Username = "exam.csci445@gmail.com"; // GMAIL username
-            $mail->Password = "jeffpaone1"; // GMAIL password
-    
-    
-            // Typical mail data
-        $mail->AddAddress($email, $firstname . " " . $lastname);
-        $mail->SetFrom("exam.csci445@gmail.com", "Exam CSCI445");
-        $mail->Subject = "Please confirm your exam account!";
-        $mail->Body = "Hi";
-    
-        try {
-            $mail->Send();
-            echo "Success!";
-        } catch (Exception $e) {
-            // Something went bad
-            echo "Fail :(";
-        }
-    */
 
-    // the message
-    $msg = "First line of text\nSecond line of text";
+    $result = $mailer->send($message);
 
-    // use wordwrap() if lines are longer than 70 characters
-    $msg = wordwrap($msg, 70);
-
-    echo $email;
-    // send email
-    mail($email, "My subject", $msg);
+    /*
+      $mail->AddAddress($email, $firstname . " " . $lastname);
+      $mail->SetFrom("exam.csci445@gmail.com", "Exam CSCI445");
+      $mail->Subject = "Please confirm your exam account!";
+      $mail->Body = "Hi";
 
 
 
 
+      // the message
+      $msg = "First line of text\nSecond line of text";
+
+      // use wordwrap() if lines are longer than 70 characters
+      $msg = wordwrap($msg, 70);
+
+      echo $email;
+      // send email
+      mail($email, "My subject", $msg);
+
+
+
+*/
 
     echo "<section class='heading'>
 		<h1 id='title'>Your account has been created!</h1>
