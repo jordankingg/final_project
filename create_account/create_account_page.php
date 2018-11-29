@@ -10,7 +10,10 @@
 	<script src="../script.js"></script>
 </head>
 <body>
+	<section class="heading">
 <h1 id="title">Create Account</h1>
+</section>
+<section class="content">
 <div id="create_account">
     <form data-parsley-validate="" id="create_account_form" method="post" action="create_account_success.php">
 <fieldset>
@@ -39,10 +42,13 @@
         required>
 				<input id="timesubmit" type="text" name="timesubmit"/>
 </fieldset>
-        <input id="reset" name="reset" type="reset" value="Reset">
-        <input id="user_submit" name="submit" type="submit" value="Submit">
+        <input class="button_input" id="reset" name="reset" type="reset" value="Reset">
+        <input class="button_input" id="user_submit" name="submit" type="submit" value="Submit">
     </form>
+		<br>
+		<a href="../index.php"><button id="back" >Back</button></a>
 </div>
 </div>
+</section>
 </body>
 </html>

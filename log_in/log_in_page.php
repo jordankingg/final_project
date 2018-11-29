@@ -9,8 +9,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.js"></script>
 </head>
 <body>
-
+<section class="heading">
 <h1 id="title">Log In</h1>
+</section>
+<section class="content">
 <div id="log_in">
     <form data-parsley-validate="" id="log_in_form" method="post" action="log_in_complete.php">
         <label for="username">Username: </label>
@@ -22,10 +24,13 @@
         data-parsley-minlength-message="Your password must be at least 8 characters!"
         required>
         <br><br>
-        <input id="reset" name="reset" type="reset" value="Reset">
-        <input id="user_submit" name="submit" type="submit" value="Submit">
+        <input class="button_input" id="reset" name="reset" type="reset" value="Reset">
+        <input class="button_input" id="user_submit" name="submit" type="submit" value="Submit">
     </form>
+		<br>
+		<a href="../index.php"><button id="back" >Back</button></a>
 </div>
 </div>
+</section>
 </body>
 </html>

@@ -2,6 +2,7 @@ body {
   text-align      : center;
   font-family     : sans-serif;
   background-image: url("/images/bkg.jpeg");
+  color           : navy;
 }
 
 .button {
@@ -17,4 +18,64 @@ body {
 
 #timesubmit {
   display: none;
+}
+
+h1 {
+  color     : navy;
+  text-align: center;
+}
+
+p {
+  color: navy;
+}
+
+body {
+  background: linear-gradient(to left top, navy, #5E93C2) fixed;
+}
+
+.button_input,
+button {
+  color           : navy;
+  padding         : 14px 16px;
+  text-decoration : none;
+  background-color: white;
+  font-weight     : bold;
+  border-radius   : 25px;
+  border          : 2px solid navy;
+  font-size       : 1em;
+}
+
+.button_input:hover,
+button:hover {
+  color           : navy;
+  text-align      : center;
+  padding         : 14px 16px;
+  text-decoration : none;
+  background-color: yellow;
+  font-weight     : bold;
+  border-radius   : 25px;
+  border          : 2px solid navy;
+}
+
+.heading {
+  background-color: white;
+  text-decoration : none;
+  background-color: white;
+  font-weight     : bold;
+  border-radius   : 25px;
+  border          : 2px solid navy;
+  font-size       : 1.5em;
+}
+
+fieldset {
+  padding: 15px;
+  margin : 15px;
+}
+
+.content {
+  margin-top      : 5px;
+  padding         : 10px;
+  background-color: white;
+  border-radius   : 25px;
+  border          : 2px solid navy;
 }

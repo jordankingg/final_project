@@ -15,4 +15,6 @@ DROP TABLE IF EXISTS userInfo;
     NumWrongQuest INT,
     time_ VARCHAR(50),
     As_Actived BOOLEAN,
+    auth1 VARCHAR(4),
+    auth2 VARCHAR(4),
     PRIMARY KEY(id));

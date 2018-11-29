@@ -9,9 +9,12 @@
   <script src="script.js"></script>
 </head>
 <body>
+	<section class="heading">
 <h1 id="title">Home</h1>
-<!-- Choose Login or Create Account -->
+</section>
+<section class="content">
 <div id="page1">
+
 	<div id = "login_area">
 		<a href="log_in/log_in_page.php"><button id="log_in" >Log in</button></a>
 	</div>
@@ -20,5 +23,6 @@
 		<a href="create_account/create_account_page.php"><button id="create_account" >Create Account</button></a>
 	</div>
 </div>
+</section>
 </body>
 </html>

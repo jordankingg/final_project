@@ -15,11 +15,9 @@ session_start();
 	<?php
 $_SESSION['username'] = $_POST['username'];
 $_SESSION['password'] = $_POST['password'];
-$username = $_SESSION['username'];
-$password = $_SESSION['password'];
+$user = $_SESSION['username'];
+$pwd = $_SESSION['password'];
 
-echo $username;
-echo $password;
 
     $servername = "localhost";
       $username = "user";
@@ -33,17 +31,24 @@ echo $password;
           die("Connection failed: " . $conn->connect_error);
       }
 
-      $user_sql = "SELECT * FROM userInfo WHERE username='$username' AND password='$password'";
-      $user_exists = mysqli_num_rows(mysqli_query($conn, $user_sql));
-      echo $user_exists;
-      if ($user_exists) {
-          echo "The user exists!";
+      $user_sql = "SELECT * FROM userInfo WHERE username='$user' AND password='$pwd'";
+      $user_query = mysqli_query($conn, $user_sql);
+      $user_exists = mysqli_num_rows($user_query);
+
+      if ($user_exists == 1) {
+          $user_information = mysqli_fetch_array($user_query); ?>
+          <?php
+          echo "<div id='log_in_successful'>";
+          echo "<section class='heading'> <h1 id='title'>Thank you for logging in, " . $user_information['firstname'] . "!</h1></section>";
+          echo "<section class='content'><p> You should be redirected soon! </p></section>";
+          header("refresh:2;url=test.php");
       } else {
-          echo "Sorry, please try again!";
+          echo "<div id='log_in_failure'>";
+          echo "<section class='heading'><h1 id='title'>Login Failure</h1></section>";
+          echo "<section class='content'><p>Sorry, the username and password does not match any accounts in our system.</p></section>";
+          header("refresh:5;url=log_in_page.php");
       }
      ?>
-<h1 id="title">Log In</h1>
-<div id="log_in">
 
 
 </div>
