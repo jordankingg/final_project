@@ -1,6 +1,7 @@
 body {
   text-align : center;
   font-family: sans-serif;
+  background-image: url("/images/bkg.jpeg");
 }
 
 .button {
@@ -13,7 +14,10 @@ body {
   border-bottom   : 1px solid #333333;
   border-left     : 1px solid #CCCCCC;
 }
+<<<<<<< HEAD
 
 #timesubmit {
   display: none;
 }
+=======
+>>>>>>> eeee1bd11f771aa2a7f69b79e1747ba0f16ed822
