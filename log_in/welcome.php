@@ -13,10 +13,8 @@ session_start();
 </head>
 <body>
 	<?php
-  $_SESSION['username'] = $_POST['username'];
-  $_SESSION['password'] = $_POST['password'];
-  $username = $_SESSION['username'];
-  $password = $_SESSION['password'];
+  $user = $_SESSION['username'];
+  $pwd = $_SESSION['password'];
 
   echo $username;
   echo $password;
