@@ -11,6 +11,10 @@ class ComposerStaticInit66f2cbe070e2032e20551365462a406b
     );
 
     public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'E' => 
         array (
             'Egulias\\EmailValidator\\' => 23,
@@ -18,6 +22,10 @@ class ComposerStaticInit66f2cbe070e2032e20551365462a406b
     );
 
     public static $prefixDirsPsr4 = array (
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',

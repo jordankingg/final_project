@@ -11,6 +11,12 @@
 <body>
 
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader
+require '../vendor/autoload.php';
+
 
 $servername = "localhost";
 $username = "user";
@@ -32,56 +38,50 @@ $user_exists = mysqli_query($conn, $stmt_user_exists);
 $user_count = mysqli_num_rows($user_exists);
 $user_exists->close();
 if ($user_count == 0) {
-    $user_orders = $conn->prepare("INSERT INTO userInfo (lastname, firstname, email, password, username, time_) VALUES (?, ?, ?, ?, ?, ?)");
-    $user_orders->bind_param("ssssss", $lastname, $firstname, $email, $password, $username, $timesubmit);
+    $token1 = bin2hex(openssl_random_pseudo_bytes(10));
+    $token2 = bin2hex(openssl_random_pseudo_bytes(10));
+    $has_Activated = 0;
+    $user_orders = $conn->prepare("INSERT INTO userInfo (lastname, firstname, email, password, username, time_, token1, token2, has_Actived) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $user_orders->bind_param("ssssssssi", $lastname, $firstname, $email, $password, $username, $timesubmit, $token1, $token2, $has_Activated);
     $user_orders->execute();
     $user_orders->close();
     //gmail username: exam.csci445@gmail.com
     //gmail password: jeffpaone1
 
-    require_once '../vendor/swiftmailer/swiftmailer/lib/swift_required.php';
+    $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+    try {
+        //Server settings
+          //  $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+            $mail->isSMTP();                                      // Set mailer to use SMTP
+            $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+            $mail->SMTPAuth = true;                               // Enable SMTP authentication
+            $mail->Username = 'exam.csci445@gmail.com';                 // SMTP username
+            $mail->Password = 'jeffpaone1';                           // SMTP password
+            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = 587;                                    // TCP port to connect to
 
-    $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, "ssl"))
-              ->setUsername("exam.csci445@gmail.com")
-              ->setPassword('jeffpaone1');
+            //Recipients
+        $mail->setFrom('exam.csci445@gmail.com', 'Mines Admission Exam');
+        $mail->addAddress($email, $firstname . " " . $lastname);     // Add a recipient
 
-    $mailer = new Swift_Mailer($transport);
+        $mail->isHTML(true);                                // Set email format to HTML
+        $prefix = "192.168.64.2/csci445/final_project/";
+        $link = "http://{$prefix}authenticate_account.php?username={$username}&token1={$token1}&token2=${token2}";
+        $mail->Subject = 'Mines Admission Exam Confirmation Email';
+        $mail->Body    = "Hello {$firstname}, please click <a href='{$link}'>here</a> to confirm your account.";
+        $mail->AltBody = "Hello {$firstname}, please open the following link to confirm your account. {$link}";
 
-    $message = (new Swift_Message('Test Subject'))
-              ->setFrom(array("exam.csci445@gmail.com" => 'Admission Exam'))
-              ->setTo(array($email))
-              ->setBody('This is a test mail.');
+        $mail->send();
+    } catch (Exception $e) {
+        echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+    }
 
-    $result = $mailer->send($message);
-
-    /*
-      $mail->AddAddress($email, $firstname . " " . $lastname);
-      $mail->SetFrom("exam.csci445@gmail.com", "Exam CSCI445");
-      $mail->Subject = "Please confirm your exam account!";
-      $mail->Body = "Hi";
-
-
-
-
-      // the message
-      $msg = "First line of text\nSecond line of text";
-
-      // use wordwrap() if lines are longer than 70 characters
-      $msg = wordwrap($msg, 70);
-
-      echo $email;
-      // send email
-      mail($email, "My subject", $msg);
-
-
-
-*/
 
     echo "<section class='heading'>
 		<h1 id='title'>Your account has been created!</h1>
 		</section>
 		<section class='content'>
-			<p>Please check your email to follow the link to activate your account!</p>
+			<p>Please check your email to follow the link to activate your account! If you don't see it in your inbox, please check your junk folder!</p>
 			<p>Once your account has been activated, click <a href='../index.php'>here</a> to return to the home page to log in.</p>
 		</section>";
 } else {

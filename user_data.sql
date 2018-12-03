@@ -3,7 +3,6 @@ USE Final;
 
 DROP TABLE IF EXISTS userInfo;
 
-
  CREATE TABLE userInfo(
     id INT  UNSIGNED AUTO_INCREMENT,
     lastname VARCHAR (30)  NOT NULL,
@@ -14,7 +13,7 @@ DROP TABLE IF EXISTS userInfo;
     NumCorrectQuest INT,
     NumWrongQuest INT,
     time_ VARCHAR(50),
-    As_Actived BOOLEAN,
-    auth1 VARCHAR(4),
-    auth2 VARCHAR(4),
+    has_Actived BOOLEAN,
+    token1 VARCHAR(20),
+    token2 VARCHAR(20),
     PRIMARY KEY(id));
