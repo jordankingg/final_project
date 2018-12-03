@@ -41,18 +41,18 @@ $pwd = $_SESSION['password'];
           echo "<div id='log_in_successful'>";
           echo "<section class='heading'> <h1 id='title'>Thank you for logging in, " . $user_information['firstname'] . "!</h1></section>";
           echo "<section class='content'><p> You should be redirected soon! </p></section>";
-          header("refresh:2;url=welcome.php");
+          header("refresh:2;url=../exam/exam_index.php");
       } elseif ($user_exists == 1 and $user_information['has_Actived'] == 0) {
-                    echo "<div id='log_in_failure'>";
-                    echo "<section class='heading'><h1 id='title'>Login Failure</h1></section>";
-                    echo "<section class='content'><p>Sorry, the username and password does not match any accounts in our system.</p></section>";
-                    header("refresh:5;url=log_in_page.php");
-                } else {
-           echo "<div id='log_in_failure'>";
-           echo "<section class='heading'><h1 id='title'>Login Failure</h1></section>";
-           echo "<section class='content'><p>Sorry, the username and password does not match any accounts in our system.</p></section>";
-           header("refresh:5;url=log_in_page.php");
-       }
+          echo "<div id='log_in_failure'>";
+          echo "<section class='heading'><h1 id='title'>Login Failure</h1></section>";
+          echo "<section class='content'><p>Sorry, the username and password does not match any accounts in our system.</p></section>";
+          header("refresh:5;url=log_in_page.php");
+      } else {
+          echo "<div id='log_in_failure'>";
+          echo "<section class='heading'><h1 id='title'>Login Failure</h1></section>";
+          echo "<section class='content'><p>Sorry, the username and password does not match any accounts in our system.</p></section>";
+          header("refresh:5;url=log_in_page.php");
+      }
      ?>
 
 

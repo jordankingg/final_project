@@ -16,9 +16,6 @@ session_start();
   $user = $_SESSION['username'];
   $pwd = $_SESSION['password'];
 
-  echo $username;
-  echo $password;
-
       $servername = "localhost";
         $username = "user";
         $password = "password";
@@ -31,19 +28,26 @@ session_start();
             die("Connection failed: " . $conn->connect_error);
         }
   ?>
+		<section class="heading">
   <h1 id="ExTitle">WELCOME TO MINES ADMISSION EXAM</h1>
+</section>
+<section class="content">
   <p>
-Please read the following carefully.
+Please read the following instructions carefully:
+
+<br><br>
+
 This exam is the last step of your admission process. It has 10
-questions you need to have 8 corrects answer to pass. This exam
+questions and you need to have a total of 8 correct answer to pass. This exam
 consists of 5 Math and 5 English questions. It does not matter
-the numbers of question answered in each category you just need
-8 corrects answers.
-Whenever you are ready just click the continue button to start the exam.
+the number of question answered in each category, you just need a total of
+8 correct answers.
+<br><br>
+Whenever you are ready just click the button below to start the exam.
   </p>
-  <div id="continue"> CONTINUE
-<form data-parsley-validate="" id="exam" method="post" action="exam.php">
-  </div>
+	<a href="exam.php"><button id="start_exam" >Start Exam</button></a>
+</section>
+
 
 </body>
 </html>
