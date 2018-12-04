@@ -14,7 +14,8 @@ h1 {
 }
 
 p {
-  color: navy;
+  color     : navy;
+  text-align: center;
 }
 
 body {
@@ -28,33 +29,15 @@ form button {
 form input {
   text-align: center;
 }
-/*
 
-
-.button_input,
-button {
-  color           : navy;
-  padding         : 14px 16px;
-  text-decoration : none;
-  background-color: white;
-  font-weight     : bold;
-  border-radius   : 25px;
-  border          : 2px solid navy;
-  font-size       : 1em;
+#account_info {
+  margin: 0 auto;
 }
 
-.button_input:hover,
-button:hover {
-  color           : navy;
-  text-align      : center;
-  padding         : 14px 16px;
-  text-decoration : none;
-  background-color: yellow;
-  font-weight     : bold;
-  border-radius   : 25px;
-  border          : 2px solid navy;
+#exam_info {
+  margin: 0 auto;
 }
-*/
+
 #head_bar {
   text-align: center;
   margin    : auto;
@@ -71,8 +54,16 @@ button:hover {
   border          : 2px solid navy;
 }
 
+.boldme {
+  font-weight: bold;
+}
+
 #exTitle {
   font-size: 1.5em;
+}
+
+.content h2 {
+  text-align: center;
 }
 
 .buttons {

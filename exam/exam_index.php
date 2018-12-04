@@ -38,22 +38,23 @@ session_start();
 
         $user_exists_query->close();
 
-
+include 'exam_header.php';
   ?>
-		<section class="heading">
-      <div class="pure-g">
-      <div class="pure-u-1-3"></div>
-  <h1 class="pure-u-1-3" id="ExTitle">Mines Admission Exam</h1>
-  <div class="pure-u-1-3" id="head_bar">
-    <div >
-    <a class="pure-button pure-button-primary" href="../account/my_account.php">My Account</a>
-    <a class="pure-button pure-button-primary" href="">Log Out</a>
-  </div>
-</div>
-</div>
-</section>
+
 <section class="content">
-<?php echo "<h2>Welcome, {$user_info['firstname']} </h2>"; ?>
+<?php
+echo "<h2>Welcome, {$user_info['firstname']}!</h2>";
+if ($user_info['num_correct_quest'] == -1 and $user_info['num_wrong_quest'] == -1) {
+    echo "<p>It looks like you haven't started your exam yet! If you'd like to start, please click the button below.</p><br>";
+    echo "<div class='buttons'>
+  		<a class='pure-button pure-button-primary' href='exam_start.php'>Begin Exam</a></div>";
+} else {
+    echo "<p>It looks like you have started your exam yet! If you'd like to resume, please click the button below.</p><br>";
+    echo "<div class='buttons'>
+    <a class='pure-button pure-button-primary' href='exam.php'>Resume Exam</a></div>";
+}
+
+?>
 </section>
 </body>
 </html>

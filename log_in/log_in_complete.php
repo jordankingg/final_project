@@ -1,5 +1,10 @@
 <?php
 session_start();
+//create a cryptographically secure token.
+$userToken = bin2hex(openssl_random_pseudo_bytes(24));
+
+//assign the token to a session variable.
+$_SESSION['user_token'] = $userToken;
 ?>
 <!DOCTYPE html>
 <head>
