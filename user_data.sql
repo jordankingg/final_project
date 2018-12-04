@@ -16,4 +16,5 @@ DROP TABLE IF EXISTS userInfo;
     has_Actived BOOLEAN,
     token1 VARCHAR(20),
     token2 VARCHAR(20),
+    password_reset_token VARCHAR(20),
     PRIMARY KEY(id));

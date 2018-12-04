@@ -72,16 +72,35 @@ form input {
 }
 
 fieldset {
-  font-weight: bold;
-  padding    : 15px;
-  margin     : 15px;
+  text-align: center;
+  margin    : 0 auto;
+  padding   : 15px;
+  margin    : 15px;
+}
+
+.pure-form-aligned .pure-control-group label {
+  text-align: left;
 }
 
 fieldset input {
+  margin     : 0 auto;
   font-weight: normal;
 }
 
+fieldset a {
+  color: #666666;
+}
+
 .content {
+  margin-top      : 5px;
+  padding         : 10px;
+  background-color: white;
+  border-radius   : 25px;
+  border          : 2px solid navy;
+}
+
+.content_center {
+  text-align      : center;
   margin-top      : 5px;
   padding         : 10px;
   background-color: white;

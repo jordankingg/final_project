@@ -6,6 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="../style.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.4.3/fabric.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/af.js"></script>
+
   <script src="../script.js"></script>
 </head>
 <body>
@@ -33,7 +35,7 @@ $email = $_POST['email'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 $timesubmit = $_POST['timesubmit'];
-echo $timesubmit;
+
 $stmt_user_exists = "SELECT * FROM userInfo WHERE firstname='$firstname' AND email='$email' AND time_='$timesubmit'";
 $user_exists = mysqli_query($conn, $stmt_user_exists);
 $user_count = mysqli_num_rows($user_exists);
