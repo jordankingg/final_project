@@ -36,10 +36,11 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $timesubmit = $_POST['timesubmit'];
 
-$stmt_user_exists = "SELECT * FROM userInfo WHERE firstname='$firstname' AND email='$email' AND time_='$timesubmit'";
+$stmt_user_exists = "SELECT * FROM userInfo WHERE firstname='$firstname' AND username='$username' AND email='$email' AND time_='$timesubmit'";
 $user_exists = mysqli_query($conn, $stmt_user_exists);
 $user_count = mysqli_num_rows($user_exists);
 $user_exists->close();
+
 if ($user_count == 0) {
     $token1 = bin2hex(openssl_random_pseudo_bytes(10));
     $token2 = bin2hex(openssl_random_pseudo_bytes(10));
@@ -49,6 +50,20 @@ if ($user_count == 0) {
     $user_orders->bind_param("ssssssssiii", $lastname, $firstname, $email, $password, $username, $timesubmit, $token1, $token2, $has_Activated, $questions, $questions);
     $user_orders->execute();
     $user_orders->close();
+
+
+    $get_id_sql = "SELECT * FROM userInfo WHERE email='$email'";
+    $get_id_query = mysqli_query($conn, $get_id_sql);
+    if (!$get_id_query) {
+        printf("Error: %s\n", mysqli_error($conn));
+        exit();
+    }
+    $user_info = mysqli_fetch_array($get_id_query);
+    $user_id = $user_info['id'];
+    $question = $conn->prepare("INSERT INTO userExamInfo (user_id, num_total_correct_quest, num_total_wrong_quest, num_english_correct_quest, num_math_correct_quest) VALUES (?, ?, ?, ?, ?)");
+    $question->bind_param("iiiii", $user_id, $questions, $questions, $questions, $questions);
+    $question->execute();
+    $question->close();
     //gmail username: exam.csci445@gmail.com
     //gmail password: jeffpaone1
 

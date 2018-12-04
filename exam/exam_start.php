@@ -48,9 +48,11 @@ consists of 5 Math and 5 English questions. It does not matter
 the number of question answered in each category, you just need a total of
 8 correct answers.
 <br><br>
-Whenever you are ready just click the button below to start the exam.
+Whenever you are ready, click the button below to start the exam.
   </p>
-	<a href="exam.php"><button id="start_exam" >Start Exam</button></a>
+	<div class='buttons'>
+	<a href="exam.php" class="pure-button pure-button-primary">Start Exam</a>
+</div>
 </section>
 
 
