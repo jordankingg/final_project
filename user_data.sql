@@ -45,9 +45,21 @@ CREATE TABLE examQuestionInfo(
 
 INSERT INTO examQuestionInfo (question, question_type, choice_a, choice_b, choice_c, choice_d, correct_answer)
 VALUES ('What does the method, console.log() do?', 'js',  "Opens your computer\'s terminal", 'Logs a message to the console', 'Prints out all local variables', 'Nothing', 'A');
-INSERT INTO examQuestionInfo (question, question_type, choice_a, choice_b, choice_c, choice_d, correct_answer)
-VALUES ('How would you include the local JavaScript file, script.js?', 'js',  "<javascript src='script.js'>", "<javascript src='script.js'></javascript>", "<script src='script.js'></script>", "<script src='script.js'>", 'C'); 
 
+INSERT INTO examQuestionInfo (question, question_type, choice_a, choice_b, choice_c, choice_d, correct_answer)
+VALUES ('How would you include the local JavaScript file, script.js?', 'js',  "<javascript src='script.js'>", "<javascript src='script.js'></javascript>", "<script src='script.js'></script>", "<script src='script.js'>", 'C');
+
+INSERT INTO examQuestionInfo (question, question_type, choice_a, choice_b, choice_c, choice_d, correct_answer)
+VALUES ('How do you correctly instantiate an array in JavaScript?', 'js',  "var food = ['sandwich' . 'strawberry' . 'chips'];", "var food = ['sandwich', 'strawberry', 'chips'];", "var food = 'sandwich', 'strawberry', 'chips';", "var food = ('sandwich', 'strawberry', 'chips');", 'B');
+
+INSERT INTO examQuestionInfo (question, question_type, choice_a, choice_b, choice_c, choice_d, correct_answer)
+VALUES ('Which of the following displays a dialog with an optional message prompting the user to input text?', 'js',  "prompt(message, default);", 'Console.log(message);', 'alert(message);', 'confirm()', 'A');
+
+INSERT INTO examQuestionInfo (question, question_type, choice_a, choice_b, choice_c, choice_d, correct_answer)
+VALUES ('Variables are declared in JavaScript with which of the following keywords?', 'js',  "new", 'variable', 'js', 'var', 'D');
+
+INSERT INTO examQuestionInfo (question, question_type, choice_a, choice_b, choice_c, choice_d, correct_answer)
+VALUES ('Why would you use GET over POST?', 'php',  "GET URLs can be bookmarked", 'Parameters are not saved in browser history.', 'GET is more secure than POST', 'There are no restrictions on URL length', 'A');
 /*
 ALTER TABLE userInfo ADD FOREIGN KEY(id) REFERENCES userExamInfo(user_id);
 ALTER TABLE userExamInfo ADD FOREIGN KEY(user_id) REFERENCES userExamInfo(id);
