@@ -20,7 +20,7 @@
                 <form data-parsley-validate="" id="forgot_password_form" class="pure-form-aligned" method="post" action="forgot_password_submit.php">
                     <fieldset>
                         <div class="pure-control-group">
-                          
+
                             <input id="email" name="email" data-parsley-type="email" placeholder="Email" type="text" required>
                         </div>
                     </fieldset>

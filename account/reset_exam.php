@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 $user_id = $_SESSION['user_id'];
 
-$sql_update = "UPDATE userInfo SET num_total_correct_quest=-1, num_total_wrong_quest=-1 WHERE user_id='{$user_id}'";
+$sql_update = "UPDATE userExamInfo SET num_total_correct_quest=-1, num_total_wrong_quest=-1 WHERE user_id='{$user_id}'";
 mysqli_query($conn, $sql_update);
 if (mysqli_query($conn, $sql_update)) {
     header('Location: my_account.php');

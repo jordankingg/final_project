@@ -2,6 +2,7 @@
 session_start();
 ?>
 <!DOCTYPE html>
+<html lang="en">
 <head>
 	<title>Reset Password</title>
 	<meta charset="UTF-8">

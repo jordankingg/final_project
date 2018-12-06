@@ -35,8 +35,8 @@
                 </form>
                 <br>
                 <div class="buttons">
-                    <a href="../index.php">
-                        <button class="pure-button pure-button-primary" id="back">Back</button>
+                    <a href="../index.php" class="pure-button pure-button-primary">
+Back
                     </a>
                 </div>
             </div>

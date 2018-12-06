@@ -1,16 +1,9 @@
 <?php
 session_start();
-$inactive = 600;
 
-if (isset($_SESSION['timeout'])) {
-    $session_life = time() - $_SESSION['start'];
-    if ($session_life > $inactive) {
-        header("Location: ../logout.php");
-    }
-}
-$_SESSION['timeout'] = time();
 ?>
 <!DOCTYPE html>
+<html lang="en">
 <head>
 	<title>My Account</title>
 	<meta charset="UTF-8">
@@ -95,7 +88,7 @@ include '../exam/exam_header.php';
 </table>
 <br>
 <hr>
-<p>If you'd like to restart your exam, click the button below.</p>
+<p>If you'd like to restart your exam, click the button below. You will be logged out when doing this, but then you can retake your exam.</p>
 <div class="buttons">
 <a class="pure-button pure-button-primary" href="reset_exam.php">Reset Exam</a>
 </div>

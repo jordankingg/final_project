@@ -7,6 +7,7 @@ $userToken = bin2hex(openssl_random_pseudo_bytes(24));
 $_SESSION['user_token'] = $userToken;
 ?>
 <!DOCTYPE html>
+<html lang="en">
 <head>
 	<title>Learn Web Programming</title>
 	<meta charset="UTF-8">

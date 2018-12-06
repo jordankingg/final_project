@@ -1,7 +1,6 @@
 body {
-  font-family     : sans-serif;
-  background-image: url("/images/bkg.jpeg");
-  color           : navy;
+  font-family: sans-serif;
+  color      : navy;
 }
 
 #timesubmit {

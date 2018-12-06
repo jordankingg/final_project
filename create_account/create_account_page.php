@@ -54,9 +54,7 @@
 						</form>
             <br>
 						<div class="buttons">
-            <a href="../index.php">
-                <button id="back" class="pure-button pure-button-primary">Back</button>
-            </a>
+            <a href="../index.php" class="pure-button pure-button-primary"> Back  </a>
 					</div>
         </div>
 				  <div class="pure-u-1-3"></div>

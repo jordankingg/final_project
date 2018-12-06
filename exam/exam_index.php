@@ -3,6 +3,7 @@ session_start();
 
 ?>
 <!DOCTYPE html>
+<html lang="en">
 <head>
 	<title>Mines Web Programming Admission Exam</title>
 	<meta charset="UTF-8">
@@ -16,6 +17,7 @@ session_start();
 </head>
 <body>
 	<?php
+    
   $user = $_SESSION['username'];
   $pwd = $_SESSION['password'];
 

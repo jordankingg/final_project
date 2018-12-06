@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
 	<title>Create Account</title>
 	<meta charset="UTF-8">

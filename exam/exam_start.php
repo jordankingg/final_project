@@ -2,6 +2,7 @@
 session_start();
 ?>
 <!DOCTYPE html>
+<html lang="en">
 <head>
 	<title>Web Programming Exam</title>
 	<meta charset="UTF-8">
@@ -36,7 +37,7 @@ session_start();
 
 
 <section class="content">
-	  <h2 id="ExTitle">WELCOME TO MINES PROGRAMMING ADMISSION EXAM</h2>
+	  <h2>WELCOME TO MINES PROGRAMMING ADMISSION EXAM</h2>
   <p>
 Please read the following instructions carefully:
 

@@ -70,9 +70,9 @@ $user_id = $_SESSION['user_id'];
       echo "<h2>Your Score</h2>";
       echo "<p>Your score was {$questions_correct} out of 10!</p>";
       if ($questions_correct >= 5) {
-          echo "<div class='popup'>
-            <h2>Congrats!</h2>
-        </div>";
+          echo "<h2>Congrats!</h2>";
+          echo "<p>You passed the exam!</p>";
+          echo "<p>You may retake your exam by restarting it on the Restart Exam page.</p>";
       } else {
           echo "<p>Sorry, it looks like you failed your admission exam.</p>";
           echo "<p>You may retake your exam by restarting it on the Restart Exam page.</p>";
