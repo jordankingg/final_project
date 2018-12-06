@@ -64,7 +64,11 @@ VALUES ('Why would you use GET over POST?', 'php',  "GET URLs can be bookmarked"
 INSERT INTO examQuestionInfo (question, question_type, choice_a, choice_b, choice_c, choice_d, correct_answer)
 VALUES ('Which of the following is a comment in PHP?', 'php',  "/* */", '//', '#', 'All of the above', 'D');
 
+INSERT INTO examQuestionInfo (question, question_type, choice_a, choice_b, choice_c, choice_d, correct_answer)
+VALUES ('Which of the following is not a valid PHP comparison operator?', 'php', "<=>", "!=", '>=', 'None of the above', 'A');
 
+INSERT INTO examQuestionInfo (question, question_type, choice_a, choice_b, choice_c, choice_d, correct_answer)
+VALUES ('Which of the following is NOT valid in PHP?', 'echo(\'hi\');',  "echo 'hi';", '//', '#', 'All of the above', 'D');
 /*
 ALTER TABLE userInfo ADD FOREIGN KEY(id) REFERENCES userExamInfo(user_id);
 ALTER TABLE userExamInfo ADD FOREIGN KEY(user_id) REFERENCES userExamInfo(id);
