@@ -68,7 +68,10 @@ INSERT INTO examQuestionInfo (question, question_type, choice_a, choice_b, choic
 VALUES ('Which of the following is not a valid PHP comparison operator?', 'php', "<=>", "!=", '>=', 'None of the above', 'A');
 
 INSERT INTO examQuestionInfo (question, question_type, choice_a, choice_b, choice_c, choice_d, correct_answer)
-VALUES ('Which of the following is NOT valid in PHP?', 'echo(\'hi\');',  "echo 'hi';", '//', '#', 'All of the above', 'D');
+VALUES ('Which of the following is NOT valid in PHP?', "php", "print 'hi';", "print 'This ', 'string ', 'was ', 'made ', 'with multiple parameters.'", "print 'hi';", "echo 'This ', 'string ', 'was ', 'made ', 'with multiple parameters.'", 'C');
+
+INSERT INTO examQuestionInfo (question, question_type, choice_a, choice_b, choice_c, choice_d, correct_answer)
+VALUES ('What is $_SESSION[]\'s purpose?', 'php',  "It is used to register a global variable ", "It is used to to initialize a session", "It is used to store variables in the current session ", 'None of the above', 'C');
 /*
 ALTER TABLE userInfo ADD FOREIGN KEY(id) REFERENCES userExamInfo(user_id);
 ALTER TABLE userExamInfo ADD FOREIGN KEY(user_id) REFERENCES userExamInfo(id);
