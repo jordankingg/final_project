@@ -60,6 +60,11 @@ VALUES ('Variables are declared in JavaScript with which of the following keywor
 
 INSERT INTO examQuestionInfo (question, question_type, choice_a, choice_b, choice_c, choice_d, correct_answer)
 VALUES ('Why would you use GET over POST?', 'php',  "GET URLs can be bookmarked", 'Parameters are not saved in browser history.', 'GET is more secure than POST', 'There are no restrictions on URL length', 'A');
+
+INSERT INTO examQuestionInfo (question, question_type, choice_a, choice_b, choice_c, choice_d, correct_answer)
+VALUES ('Which of the following is a comment in PHP?', 'php',  "/* */", '//', '#', 'All of the above', 'D');
+
+
 /*
 ALTER TABLE userInfo ADD FOREIGN KEY(id) REFERENCES userExamInfo(user_id);
 ALTER TABLE userExamInfo ADD FOREIGN KEY(user_id) REFERENCES userExamInfo(id);

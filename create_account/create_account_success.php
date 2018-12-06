@@ -60,7 +60,7 @@ if ($user_count == 0) {
     }
     $user_info = mysqli_fetch_array($get_id_query);
     $user_id = $user_info['id'];
-    $question = $conn->prepare("INSERT INTO userExamInfo (user_id, num_total_correct_quest, num_total_wrong_quest, num_english_correct_quest, num_math_correct_quest) VALUES (?, ?, ?, ?, ?)");
+    $question = $conn->prepare("INSERT INTO userExamInfo (user_id, num_total_correct_quest, num_total_wrong_quest, num_php_correct_quest, num_js_correct_quest) VALUES (?, ?, ?, ?, ?)");
     $question->bind_param("iiiii", $user_id, $questions, $questions, $questions, $questions);
     $question->execute();
     $question->close();
