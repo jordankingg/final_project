@@ -1,3 +1,13 @@
+<script type="text/javascript">
+    window.setTimeout('checkIfContinue()', 10*60*1000);  //10 minutes
+
+    function checkIfContinue()
+    {
+
+            window.location = '../logout.php';
+
+    }
+</script>
 <section class="heading">
   <div class="pure-g">
   <div class="pure-u-1-3"></div>

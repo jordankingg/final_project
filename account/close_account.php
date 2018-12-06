@@ -13,7 +13,9 @@ if ($conn->connect_error) {
 }
 $user_id = $_SESSION['user_id'];
 $sql_delete = "DELETE FROM userInfo WHERE id='{$user_id}'";
+mysqli_query($conn, $sql_delete);
 
+$sql_delete = "DELETE FROM userExamInfo WHERE user_id='{$user_id}'";
 mysqli_query($conn, $sql_delete);
 
 if (!function_exists('hash_equals')) {

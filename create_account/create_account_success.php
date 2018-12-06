@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-	<title>Learn Web Programming</title>
+	<title>Create Account</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../style.css" />
@@ -46,8 +46,8 @@ if ($user_count == 0) {
     $token2 = bin2hex(openssl_random_pseudo_bytes(10));
     $has_Activated = 0;
     $questions = -1;
-    $user_orders = $conn->prepare("INSERT INTO userInfo (lastname, firstname, email, password, username, time_, token1, token2, has_Actived, num_correct_quest, num_wrong_quest) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $user_orders->bind_param("ssssssssiii", $lastname, $firstname, $email, $password, $username, $timesubmit, $token1, $token2, $has_Activated, $questions, $questions);
+    $user_orders = $conn->prepare("INSERT INTO userInfo (lastname, firstname, email, password, username, time_, token1, token2, has_Actived) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $user_orders->bind_param("ssssssssi", $lastname, $firstname, $email, $password, $username, $timesubmit, $token1, $token2, $has_Activated);
     $user_orders->execute();
     $user_orders->close();
 
@@ -60,8 +60,8 @@ if ($user_count == 0) {
     }
     $user_info = mysqli_fetch_array($get_id_query);
     $user_id = $user_info['id'];
-    $question = $conn->prepare("INSERT INTO userExamInfo (user_id, num_total_correct_quest, num_total_wrong_quest, num_php_correct_quest, num_js_correct_quest) VALUES (?, ?, ?, ?, ?)");
-    $question->bind_param("iiiii", $user_id, $questions, $questions, $questions, $questions);
+    $question = $conn->prepare("INSERT INTO userExamInfo (user_id, num_total_correct_quest, num_total_wrong_quest) VALUES (?, ?, ?)");
+    $question->bind_param("iii", $user_id, $questions, $questions);
     $question->execute();
     $question->close();
     //gmail username: exam.csci445@gmail.com

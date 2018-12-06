@@ -99,6 +99,11 @@ fieldset a {
   border          : 2px solid navy;
 }
 
+xmp {
+  font-family: sans-serif;
+  display    : inline;
+}
+
 .content_center {
   text-align      : center;
   margin-top      : 5px;

@@ -22,17 +22,16 @@ if (!function_exists('hash_equals')) {
 }
 
 //Get the token from the query string.
-$queryStrToken = isset($_GET['token']) ? $_GET['token'] : '';
 
 //If the token in the query string matches the token in the user's
 //session, then we can destroy the session and log them out.
-if (hash_equals($_SESSION['user_token'], $queryStrToken)) {
+
     //Token is correct. Destroy the session.
     session_destroy();
     //Redirect them back to the home page or something.
     header('Location: index.php');
     exit;
-}
+
 ?>
 
 <?php ?>

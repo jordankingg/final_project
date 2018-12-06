@@ -12,7 +12,7 @@
 	<section class="heading">
 <h1 id="title">Account Confirmation</h1>
 </section>
-<section class="content">
+<section class="content_center">
 <?php
 
 $user = $_GET['username'];

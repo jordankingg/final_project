@@ -8,7 +8,7 @@ round = 0;
 $(document).ready(function() {
   $("#click").hide();
   $("#ques").hide();
-  $(".popup").hide();
+
   setScore(0);
 });
 
@@ -203,13 +203,6 @@ function setScore(s) {
   percent = (s / 4) * 100;
   $("#score").empty();
   $("#score").html("Score: " + s + "/4 (" + percent + "%)");
-}
-
-function endGame(s, r) {
-  if (r == 4) {
-    $(".popup").fadeIn("slow");
-    $("#score_count").html("Your final score:\n" + s + " out of 4!");
-  }
 }
 
 $(document).ready(function() {

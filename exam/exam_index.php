@@ -1,9 +1,10 @@
 <?php
 session_start();
+
 ?>
 <!DOCTYPE html>
 <head>
-	<title>Learn Web Programming</title>
+	<title>Mines Web Programming Admission Exam</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../style.css" />
@@ -36,6 +37,10 @@ session_start();
 
         $_SESSION['user_id'] = $user_info['id'];
 
+                $user_sql = "SELECT * FROM userExamInfo WHERE user_id='{$_SESSION['user_id']}'";
+                $user_exists_query = mysqli_query($conn, $user_sql);
+                $user_exam_info = mysqli_fetch_array($user_exists_query);
+
         $user_exists_query->close();
 
 include 'exam_header.php';
@@ -44,14 +49,12 @@ include 'exam_header.php';
 <section class="content">
 <?php
 echo "<h2>Welcome, {$user_info['firstname']}!</h2>";
-if ($user_info['num_correct_quest'] == -1 and $user_info['num_wrong_quest'] == -1) {
+if ($user_exam_info['num_total_correct_quest'] == -1 and $user_exam_info['num_total_wrong_quest'] == -1) {
     echo "<p>It looks like you haven't started your exam yet! If you'd like to start, please click the button below.</p><br>";
     echo "<div class='buttons'>
   		<a class='pure-button pure-button-primary' href='exam_start.php'>Begin Exam</a></div>";
 } else {
-    echo "<p>It looks like you have started your exam yet! If you'd like to resume, please click the button below.</p><br>";
-    echo "<div class='buttons'>
-    <a class='pure-button pure-button-primary' href='exam.php'>Resume Exam</a></div>";
+    echo "<p>It looks like you have already taken your exam! If you'd like to retake it, please restart your exam on the My Account page.</p><br>";
 }
 
 ?>

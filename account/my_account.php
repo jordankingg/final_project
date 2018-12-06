@@ -1,5 +1,14 @@
 <?php
 session_start();
+$inactive = 600;
+
+if (isset($_SESSION['timeout'])) {
+    $session_life = time() - $_SESSION['start'];
+    if ($session_life > $inactive) {
+        header("Location: ../logout.php");
+    }
+}
+$_SESSION['timeout'] = time();
 ?>
 <!DOCTYPE html>
 <head>
@@ -34,10 +43,15 @@ session_start();
         $user_sql = "SELECT * FROM userInfo WHERE username='{$user}'";
         $user_exists_query = mysqli_query($conn, $user_sql);
         $user_info = mysqli_fetch_array($user_exists_query);
+                $_SESSION['user_id'] = $user_info['id'];
 
-        $_SESSION['user_id'] = $user_info['id'];
-        $numQuestionsCorrect = $user_info['num_correct_quest'];
-        $numQuestionsWrong = $user_info['num_wrong_quest'];
+                $user_sql = "SELECT * FROM userExamInfo WHERE user_id='{$_SESSION['user_id']}'";
+                $user_exists_query = mysqli_query($conn, $user_sql);
+                $user_exam_info = mysqli_fetch_array($user_exists_query);
+
+
+        $numQuestionsCorrect = $user_exam_info['num_total_correct_quest'];
+        $numQuestionsWrong = $user_exam_info['num_total_wrong_quest'];
         if ($numQuestionsWrong == -1) {
             $numQuestionsWrong = 0;
         }
@@ -93,6 +107,12 @@ include '../exam/exam_header.php';
 <a class="pure-button pure-button-primary" href="close_account.php?token=<?= $_SESSION['user_token'] ?>" onclick="return confirm('Are you sure you want to close your account?');">Close Account</a>
 </div>
 <br>
+<hr>
+<div class="buttons">
+	<br>
+<a class="pure-button pure-button-primary" href="../exam/exam_index.php">Back</a>
+<br>
+</div>
 <?php
 
 
