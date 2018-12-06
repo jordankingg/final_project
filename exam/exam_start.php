@@ -36,7 +36,7 @@ session_start();
 
 
 <section class="content">
-	  <h2 id="ExTitle">WELCOME TO MINES ADMISSION EXAM</h2>
+	  <h2 id="ExTitle">WELCOME TO MINES PROGRAMMING ADMISSION EXAM</h2>
   <p>
 Please read the following instructions carefully:
 
@@ -44,7 +44,7 @@ Please read the following instructions carefully:
 
 This exam is the last step of your admission process. It has 10
 questions and you need to have a total of 8 correct answer to pass. This exam
-consists of 5 Math and 5 English questions. It does not matter
+consists of 5 JavaScript and 5 PHP questions. It does not matter
 the number of question answered in each category, you just need a total of
 8 correct answers.
 <br><br>
